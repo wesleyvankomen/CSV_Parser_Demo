@@ -92,26 +92,12 @@ namespace CSV_Parser_Demo.Models
                 stringLength++;
             }
 
-            //// Process final field on line
-            //if (_options.EscapeCharacters.Contains(line[beginPos]) && _options.EscapeCharacters.Contains(line[beginPos + stringLength - 1]))
-            //{
-            //    beginPos++;
-            //    stringLength -= 2;
-            //}
-            //result.Add(line.Substring(beginPos, stringLength));
-
             return result;
         }
 
         public string FormatOutput(List<string>[] parsedLines)
         {
             StringBuilder output = new StringBuilder();
-
-            //foreach(List<string> line in parsedLines)
-            //{
-            //    string[] formattedLine = line.Select(x => String.Concat("[", x, "]")).ToArray();
-            //    output.Append(String.Join(" ", formattedLine) + "\r\n");
-            //}
 
             for (int i = 0; i < parsedLines.Length; i++)
             {
@@ -124,7 +110,6 @@ namespace CSV_Parser_Demo.Models
                     output.Append("\r\n");
                 }
             }
-
 
             return output.ToString();
         }
