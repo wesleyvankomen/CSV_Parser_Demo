@@ -1,0 +1,4 @@
+[Name] [Race] [Power Level] [Home World] [Favorite Numbers] [Favorite Color]
+[Wesley] [Human] [Over 9000] [Earth] [3,4,7,13] [Green, Red]
+[Goku] [Saiyan] [8000] [Planet Vegeta] [41] [Orange, Blue]
+[George] [Martian] [2500] [Mars] [9,18,27] [Purple]

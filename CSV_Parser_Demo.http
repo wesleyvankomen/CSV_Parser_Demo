@@ -1,6 +1,0 @@
-@CSV_Parser_Demo_HostAddress = http://localhost:5041
-
-GET {{CSV_Parser_Demo_HostAddress}}/CSV/
-Accept: application/json
-
-###
