@@ -5,8 +5,8 @@
         public CSVParserOptions() 
         {
             Delimeter = ',';
-            LineTerminators = ["\r\n", "\n", "\r"];
-            EscapeCharacters = ['\"'];
+            LineTerminators = new string[] { "\r\n", "\n", "\r" };
+            EscapeCharacters = new char[] { '\"' };
         }
 
         public char Delimeter {get; set;}

@@ -33,14 +33,19 @@ namespace CSV_Parser_Demo.Controllers
                 }
 
                 string? input = new StreamReader(HttpContext.Request.Body).ReadToEnd();
+                string ip = HttpContext?.Connection?.RemoteIpAddress?.MapToIPv4().ToString() ?? "Unknown";
 
-                _logger.LogInformation($"CSV parsing request recieved at {DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")}" +
-                    $" from the following ip: {HttpContext?.Connection?.RemoteIpAddress?.MapToIPv4().ToString() ?? "unknown"}");
+                _logger.LogInformation($"CSV parsing request recieved at {DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss")} from {ip}");
 
                 if (String.IsNullOrEmpty(input))
                 {
-                    _logger.LogWarning("Invalid request recieved");
-                    HttpContext.Response.StatusCode = 400;
+                    _logger.LogWarning($"Invalid request recieved from: {ip}");
+
+                    if (HttpContext?.Response != null)
+                    {
+                        HttpContext.Response.StatusCode = 400;
+                    }
+                    
                     return "Please submit your CSV in the body of your request as raw text";
                 }
 

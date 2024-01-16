@@ -8,6 +8,9 @@
 	"item": [
 		{
 			"name": "CSV Parser Example",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -21,8 +24,58 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5041",
+					"raw": "http://localhost:5042",
 					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5042"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CSV Parser Example HTTPS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"Patient Name\",\"SSN\",\"Age\",\"Phone Number\",\"Status\"\r\n\"Prescott, Zeke\",\"542-51-6641\",21,\"801-555-2134\",\"Opratory=2,PCP=1\"\r\n\"Goldstein, Bucky\",\"635-45-1254\",42,\"435-555-1541\",\"Opratory=1,PCP=1\"\r\n\"Vox, Bono\",\"414-45-1475\",51,\"801-555-2100\",\"Opratory=3,PCP=2\"",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5041",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5041"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CSV Parser Example Error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5041",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
